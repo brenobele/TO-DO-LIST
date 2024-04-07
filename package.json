@@ -1,0 +1,29 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "Projeto para aprender nodeJS MVC no Youtube, do Thi Code.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenobele/TO-DO-LIST.git"
+  },
+  "keywords": [
+    "to-do-list",
+    "nodejs"
+  ],
+  "author": "original Thi Code, aluno Breno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brenobele/TO-DO-LIST/issues"
+  },
+  "homepage": "https://github.com/brenobele/TO-DO-LIST#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.2"
+  }
+}

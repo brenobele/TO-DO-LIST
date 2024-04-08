@@ -10,7 +10,18 @@
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <form action="/create" method="post">
+        <input type="text" name="task" id="task" placeholder="Insira uma tarefa" value="teste">
+        <button type="submit" id="addButton">Adicionar</button>
+    </form>
+
+    <ul>
+        <% taskList.forEach((task)=> {%>
+            <li>
+                <%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %>
+            </li>
+            <%}); %>
+    </ul>
 
     <script src="js/script.js"></script>
 </body>

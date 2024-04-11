@@ -8,7 +8,7 @@ const getAllTasks = async (req, res) => {
     setTimeout(() => {
       message = "";
     }, 1000);
-    const taskList = await Task.find().sort({ date: "desc" });
+    const taskList = await Task.find().sort({ date: "desc", updatedAt: "asc"});
     return res.render("index", {
       task: null,
       taskList,
@@ -87,10 +87,24 @@ const deleteOneTask = async (req, res) => {
   }
 };
 
+const taskCheck = async (req, res) => {
+  try {
+    const task = await Task.findOne({ _id: req.params.id });
+    task.check ? task.check = false : task.check = true;
+    await Task.updateOne({_id: req.params.id}, task);
+    res.redirect("/");
+  } catch (err) {
+    message = 'Erro não esperado <i class="bi bi-emoji-frown-fill"></i>';
+    type = "warning";
+    return res.status(500).send({ error: err.message });
+  }
+};
+
 module.exports = {
   getAllTasks,
   createTask,
   getById,
   updateOneTask,
   deleteOneTask,
+  taskCheck,
 };

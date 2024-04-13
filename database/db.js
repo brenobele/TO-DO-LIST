@@ -2,10 +2,7 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 
-const dbName = process.env.DB_NAME;
-const dbPassword = process.env.DB_PASSWORD;
-
-const connectionString = `mongodb+srv://${dbName}:${dbPassword}@todolist.0thp4zc.mongodb.net/?retryWrites=true&w=majority&appName=todolist`;
+const connectionString = process.env.DB_URI;
 
 const connectToDb = () => {
   mongoose

@@ -8,7 +8,7 @@
 ```sh
 $ git clone https://github.com/brenobele/TO-DO-LIST.git
 $ npm i
-$ npm run dev
+$ npm start
 ```
 
 <hr />
